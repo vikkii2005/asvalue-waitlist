@@ -9,12 +9,12 @@ const features = [
   {
     icon: MessageSquare,
     title: 'Organized Chat Platform',
-    description: 'All customer conversations in one dashboard. Never lose a message again. Sort by customer or order automatically.'
+    description: 'All customer conversations in one dashboard. Never lose a message again from WhatsApp, Instagram, or Telegram.'
   },
   {
     icon: Zap,
     title: 'Message Automation',
-    description: 'Save time with pre-written templates for orders, payments, and updates. Send 100 messages in seconds.'
+    description: 'Save time with pre-written templates for orders, payments, and updates. Send bulk messages instantly.'
   },
   {
     icon: Package,
@@ -29,7 +29,7 @@ const features = [
   {
     icon: Smartphone,
     title: 'Mobile-First Business',
-    description: 'Run your entire business from your phone. Upload products, track orders, chat with customers — all mobile native.'
+    description: 'Run your entire business from your phone. Upload products, track orders, manage customers - all mobile native.'
   },
   {
     icon: TrendingUp,
@@ -38,7 +38,7 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: 'Real-Time Business Analytics',
+    title: 'Real-Time Analytics',
     description: 'See which products sell best, peak order times, revenue trends. Make smart decisions based on data.'
   }
 ]
@@ -52,7 +52,7 @@ export default function Features() {
             Everything You Need to Succeed
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            All the tools professional online businesses need. All in one platform.
+            All the tools professional online businesses need. All in one independent platform.
           </p>
         </div>
         

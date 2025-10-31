@@ -23,6 +23,7 @@ import {
   DollarSign,
   TrendingDown,
   Users2,
+  Target,
   Copy,
   Facebook,
   Twitter,

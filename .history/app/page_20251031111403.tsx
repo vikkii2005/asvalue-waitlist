@@ -23,6 +23,7 @@ import {
   DollarSign,
   TrendingDown,
   Users2,
+  Target,
   Copy,
   Facebook,
   Twitter,
@@ -37,54 +38,54 @@ import {
 
 function Hero() {
   return (
-    <section className="w-full bg-white pt-14 md:pt-20 lg:pt-24 pb-16 md:pb-20 lg:pb-24">
-      <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Laptop layout: wider text (7/12) and tighter card (5/12) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-14 items-center lg:items-start">
-          {/* Left: 7/12 */}
+    <section className="w-full bg-white pt-14 md:pt-20 lg:pt-28 pb-16 md:pb-22 lg:pb-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Make hero text column wider on laptop: 7/12 vs 5/12 card */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 lg:gap-16 items-center">
+          {/* Left: 7/12 on lg */}
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 bg-blue-600 px-4 py-2.5 rounded-full mb-6 sm:mb-7">
+            <div className="inline-flex items-center gap-2 bg-blue-600 px-4 py-2.5 rounded-full mb-6 sm:mb-8">
               <Zap className="w-4 h-4 text-white" />
               <span className="text-sm font-semibold text-white">First 100 Sellers: 6 Months Free</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-4 sm:mb-5 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-5 sm:mb-6 leading-[1.1]">
               Professional Seller
               <br />
               <span className="text-blue-600">Platform Made Simple</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-700 mb-4 sm:mb-5 leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-700 mb-4 sm:mb-6 leading-relaxed">
               One platform. All your sales channels. Keep 100% revenue.
             </p>
-            <p className="text-base sm:text-lg text-slate-600 mb-7 sm:mb-8 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-10 leading-relaxed">
               Manage WhatsApp, Instagram, and Telegram customers in one unified inbox. Build a professional storefront. Scale without limits.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button
                 onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg font-semibold text-base transition-all shadow-md hover:shadow-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-7 sm:px-9 py-3.5 sm:py-4 rounded-lg font-semibold text-base flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg"
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => document.getElementById('problems')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 px-7 sm:px-8 py-3.5 sm:py-4 rounded-lg font-semibold text-base transition-all shadow-sm hover:shadow-md"
+                className="bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 px-7 sm:px-9 py-3.5 sm:py-4 rounded-lg font-semibold text-base transition-all shadow-sm hover:shadow-md"
               >
                 Learn More
               </button>
             </div>
           </div>
 
-          {/* Right: 5/12 (aligned to right on laptop for better balance) */}
-          <div className="lg:col-span-5 lg:justify-self-end w-full">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 lg:p-8 shadow-md border border-slate-200 w-full">
+          {/* Right card: 5/12 on lg to reduce whitespace */}
+          <div className="lg:col-span-5">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200">
               <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wide mb-5">Why Choose AsValue</p>
               <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-11 h-11 bg-blue-50 rounded-lg shrink-0">
+                <div className="flex gap-4">
+                  <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
@@ -92,8 +93,8 @@ function Hero() {
                     <p className="text-sm text-slate-600">Zero commission. Ever.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-11 h-11 bg-blue-50 rounded-lg shrink-0">
+                <div className="flex gap-4">
+                  <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
@@ -101,8 +102,8 @@ function Hero() {
                     <p className="text-sm text-slate-600">For first 100 sellers only</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-11 h-11 bg-blue-50 rounded-lg shrink-0">
+                <div className="flex gap-4">
+                  <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
@@ -119,7 +120,7 @@ function Hero() {
   )
 }
 
-/* ====================== PROBLEMS (Results removed) ======================= */
+/* ====================== PROBLEMS + RESULTS ======================= */
 
 function Problems() {
   const problems = [
@@ -131,20 +132,27 @@ function Problems() {
     { icon: TrendingUp, problem: 'Growth Challenges', detail: 'Can&apos;t scale without overwhelming chaos', solution: 'Built to handle 10,000+ customers', impact: 'Scale infinitely' },
   ]
 
+  const results = [
+    { icon: Target, number: '3x', label: 'Sales Increase' },
+    { icon: Clock, number: '5h', label: 'Time Saved Daily' },
+    { icon: DollarSign, number: '100%', label: 'Revenue Kept' },
+    { icon: TrendingUp, number: '10x', label: 'Scale Capacity' },
+  ]
+
   return (
-    <section id="problems" className="w-full bg-white py-18 md:py-24 lg:py-28">
-      <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 md:mb-14">
+    <section id="problems" className="w-full bg-white py-18 md:py-24 lg:py-32">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">Your Challenges, Solved</h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl">Every seller faces these issues. AsValue solves them all in one platform.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
           {problems.map((item, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 md:p-7 hover:border-slate-300 hover:shadow-md transition-all duration-200">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="flex items-center justify-center w-11 h-11 bg-red-50 rounded-lg mb-3">
+                  <div className="w-11 h-11 bg-red-50 rounded-lg flex items-center justify-center mb-3">
                     <item.icon className="w-6 h-6 text-red-600" />
                   </div>
                   <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Problem</p>
@@ -153,7 +161,7 @@ function Problems() {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-center w-11 h-11 bg-green-50 rounded-lg mb-3">
+                  <div className="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-3">
                     <CheckCircle2 className="w-6 h-6 text-green-600" />
                   </div>
                   <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Solution</p>
@@ -163,6 +171,25 @@ function Problems() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Results – compact on mobile, 2-col on sm, 4-col on lg */}
+        <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 md:p-10">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center">Proven Results</h3>
+          <p className="text-center text-slate-300 text-sm sm:text-base mb-7 sm:mb-8 md:mb-10">From sellers in our beta program</p>
+
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {results.map((r, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-800/80 border border-slate-700 rounded-xl p-5 sm:p-6 text-center hover:border-slate-600 transition"
+              >
+                <r.icon className="w-6 h-6 sm:w-7 sm:h-7 text-blue-300 mx-auto mb-3" />
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 text-white">{r.number}</div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-tight">{r.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -188,9 +215,9 @@ function Features() {
   ]
 
   return (
-    <section className="w-full bg-slate-50 py-18 md:py-24 lg:py-28">
-      <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 md:mb-14">
+    <section className="w-full bg-slate-50 py-18 md:py-24 lg:py-30">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">Everything You Get</h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl">Complete toolkit to manage, grow, and scale your business.</p>
         </div>
@@ -198,7 +225,7 @@ function Features() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-7 mb-12 md:mb-16">
           {features.map((f, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all">
-              <div className="flex items-center justify-center w-11 h-11 bg-blue-50 rounded-lg mb-4">
+              <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
                 <f.icon className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
@@ -274,7 +301,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-200">
           <div className="text-center mb-10">
-            <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
+            <div className="w-18 h-18 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-10 h-10 text-green-600" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">You&apos;re On The Waitlist!</h2>
@@ -316,7 +343,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
                     referralCount >= t.count ? 'border-green-300 bg-green-50' : 'border-slate-200 bg-white'
                   }`}
                 >
-                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-slate-200 font-bold text-sm text-slate-700 shrink-0">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center bg-slate-200 font-bold text-sm text-slate-700 shrink-0">
                     {referralCount >= t.count ? '✓' : t.count}
                   </div>
                   <div>
@@ -341,7 +368,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
               />
               <button
                 onClick={copyToClipboard}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition text-sm md:text-base whitespace-nowrap"
+                className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold flex items-center justify-center gap-2 transition text-sm md:text-base whitespace-nowrap"
               >
                 <Copy className="w-4 h-4" /> Copy
               </button>
@@ -349,8 +376,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
           </div>
 
           <div>
-            {/* FIX: remove 'block' to avoid Tailwind 'block vs flex' conflict */}
-            <label className="flex items-center gap-2 text-base font-bold text-slate-900 mb-3">
+            <label className="block text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Share2 className="w-5 h-5 text-blue-600" /> Share
             </label>
             <div className="flex gap-2 flex-wrap">
@@ -358,7 +384,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(referralUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
+                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
               >
                 <Twitter className="w-4 h-4" /> Twitter
               </a>
@@ -366,13 +392,13 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-blue-800 hover:bg-blue-900 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
+                className="flex items-center gap-2 bg-blue-800 hover:bg-blue-900 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
               >
                 <Facebook className="w-4 h-4" /> Facebook
               </a>
               <a
                 href={`mailto:?subject=${encodeURIComponent('Join AsValue – 6 Months Free!')}&body=${encodeURIComponent(shareText + ' ' + referralUrl)}`}
-                className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
+                className="flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white px-4 py-2.5 rounded-lg font-semibold text-sm md:text-base transition"
               >
                 <Mail className="w-4 h-4" /> Email
               </a>
@@ -442,7 +468,7 @@ function WaitlistForm() {
   return (
     <section id="waitlist" className="w-full bg-white py-18">
       <Toaster position="top-center" />
-      <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">Join in 30 Seconds</h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Get 6 months free + lifetime perks. Limited to 100 sellers.</p>
@@ -524,7 +550,7 @@ function WaitlistForm() {
               </ul>
             </div>
 
-            <div className="bg-white border border-orange-300 rounded-xl p-6 flex items-start gap-3">
+            <div className="bg-white border border-orange-300 rounded-xl p-6 flex gap-3">
               <Clock className="w-5 h-5 text-orange-600 mt-0.5" />
               <div>
                 <p className="font-bold text-slate-900 text-sm md:text-base">100 Spots Only</p>

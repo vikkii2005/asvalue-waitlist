@@ -14,23 +14,23 @@ export default function Hero() {
         <div className="text-center max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-indigo-100 px-4 py-2 rounded-full mb-8">
             <MessageCircle className="w-4 h-4 text-indigo-600" />
-            <span className="text-sm font-semibold text-indigo-600">Professional WhatsApp Selling</span>
+            <span className="text-sm font-semibold text-indigo-600">Professional Selling Platform</span>
           </div>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-8 leading-tight">
-            Sell on WhatsApp
+            Stop Selling Unprofessionally
             <br />
             <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-              Like a Real Business
+              Everywhere
             </span>
           </h1>
           
           <p className="text-lg md:text-2xl text-slate-600 mb-6 max-w-4xl mx-auto leading-relaxed">
-            Stop juggling WhatsApp messages. Get automated templates, professional profiles, order tracking, and direct payments. Keep 100% of your revenue.
+            Whether you're on WhatsApp, Instagram, or Telegram - AsValue gives you one independent platform to sell professionally and keep 100% of your revenue.
           </p>
 
           <p className="text-lg text-slate-500 mb-12 max-w-3xl mx-auto">
-            Built for anyone selling online — from small businesses to established sellers who want to scale faster.
+            Built for online sellers everywhere who are tired of scattered messages and unprofessional sales.
           </p>
           
           {/* CTA Buttons */}

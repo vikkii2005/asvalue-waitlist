@@ -49,7 +49,7 @@ export default function ReferralDashboard({ referralCode, email }: Props) {
     toast.success('Referral link copied!')
   }
 
-  const shareText = 'Check out AsValue - a professional platform for selling online. Join the waitlist and get early member benefits!'
+  const shareText = 'Check out AsValue - the professional independent platform for online sellers. Join the waitlist and get early member benefits!'
 
   const getRewardTier = () => {
     if (referralCount >= 25) return 'Platinum'

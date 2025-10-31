@@ -23,6 +23,7 @@ import {
   DollarSign,
   TrendingDown,
   Users2,
+  Target,
   Copy,
   Facebook,
   Twitter,
@@ -40,7 +41,7 @@ function Hero() {
     <section className="w-full bg-white pt-14 md:pt-20 lg:pt-24 pb-16 md:pb-20 lg:pb-24">
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Laptop layout: wider text (7/12) and tighter card (5/12) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-14 items-center lg:items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-14 items-center">
           {/* Left: 7/12 */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 bg-blue-600 px-4 py-2.5 rounded-full mb-6 sm:mb-7">
@@ -78,9 +79,9 @@ function Hero() {
             </div>
           </div>
 
-          {/* Right: 5/12 (aligned to right on laptop for better balance) */}
-          <div className="lg:col-span-5 lg:justify-self-end w-full">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 lg:p-8 shadow-md border border-slate-200 w-full">
+          {/* Right: 5/12 */}
+          <div className="lg:col-span-5">
+            <div className="bg-white rounded-2xl p-6 sm:p-7 lg:p-8 shadow-md border border-slate-200">
               <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wide mb-5">Why Choose AsValue</p>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
@@ -119,7 +120,7 @@ function Hero() {
   )
 }
 
-/* ====================== PROBLEMS (Results removed) ======================= */
+/* ====================== PROBLEMS + RESULTS ======================= */
 
 function Problems() {
   const problems = [
@@ -131,6 +132,13 @@ function Problems() {
     { icon: TrendingUp, problem: 'Growth Challenges', detail: 'Can&apos;t scale without overwhelming chaos', solution: 'Built to handle 10,000+ customers', impact: 'Scale infinitely' },
   ]
 
+  const results = [
+    { icon: Target, number: '3x', label: 'Sales Increase' },
+    { icon: Clock, number: '5h', label: 'Time Saved Daily' },
+    { icon: DollarSign, number: '100%', label: 'Revenue Kept' },
+    { icon: TrendingUp, number: '10x', label: 'Scale Capacity' },
+  ]
+
   return (
     <section id="problems" className="w-full bg-white py-18 md:py-24 lg:py-28">
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +147,7 @@ function Problems() {
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl">Every seller faces these issues. AsValue solves them all in one platform.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8 mb-16">
           {problems.map((item, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 md:p-7 hover:border-slate-300 hover:shadow-md transition-all duration-200">
               <div className="grid grid-cols-2 gap-6">
@@ -163,6 +171,22 @@ function Problems() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Results: unchanged mobile, improved spacing desktop */}
+        <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 md:p-9">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center">Proven Results</h3>
+          <p className="text-center text-slate-300 text-sm sm:text-base mb-7 sm:mb-8">From sellers in our beta program</p>
+
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {results.map((r, idx) => (
+              <div key={idx} className="bg-slate-800/80 border border-slate-700 rounded-xl p-5 sm:p-6 text-center hover:border-slate-600 transition">
+                <r.icon className="w-6 h-6 sm:w-7 sm:h-7 text-blue-300 mx-auto mb-3" />
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 text-white">{r.number}</div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-tight">{r.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -274,7 +298,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-200">
           <div className="text-center mb-10">
-            <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto mb-4">
+            <div className="flex items-center justify-center w-18 h-18 bg-green-100 rounded-full mx-auto mb-4">
               <CheckCircle2 className="w-10 h-10 text-green-600" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">You&apos;re On The Waitlist!</h2>
@@ -349,8 +373,7 @@ function ReferralDashboard({ referralCode, email }: ReferralDashboardProps) {
           </div>
 
           <div>
-            {/* FIX: remove 'block' to avoid Tailwind 'block vs flex' conflict */}
-            <label className="flex items-center gap-2 text-base font-bold text-slate-900 mb-3">
+            <label className="block text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
               <Share2 className="w-5 h-5 text-blue-600" /> Share
             </label>
             <div className="flex gap-2 flex-wrap">
