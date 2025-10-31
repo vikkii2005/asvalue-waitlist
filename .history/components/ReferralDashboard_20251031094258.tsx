@@ -18,6 +18,7 @@ export default function ReferralDashboard({ referralCode, email }: Props) {
 
   const fetchUserData = useCallback(async () => {
     try {
+      // Check if supabase exists
       if (!supabase) {
         console.error('Supabase not initialized')
         return
@@ -92,11 +93,11 @@ export default function ReferralDashboard({ referralCode, email }: Props) {
           </div>
 
           {/* Reward Progress */}
-          <div className="bg-linear-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-8 mb-10 border-2 border-blue-200">
+          <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-2xl p-8 mb-10 border-2 border-blue-200">
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Rewards Progress</h3>
             <div className="space-y-4">
               <div className={`flex items-center gap-4 p-5 rounded-xl ${referralCount >= 5 ? 'bg-green-100 border-2 border-green-300' : 'bg-white border-2 border-slate-300'}`}>
-                <div className="shrink-0">
+                <div className="flex-shrink-0">
                   {referralCount >= 5 ? (
                     <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold">✓</span>
@@ -114,7 +115,7 @@ export default function ReferralDashboard({ referralCode, email }: Props) {
               </div>
               
               <div className={`flex items-center gap-4 p-5 rounded-xl ${referralCount >= 10 ? 'bg-green-100 border-2 border-green-300' : 'bg-white border-2 border-slate-300'}`}>
-                <div className="shrink-0">
+                <div className="flex-shrink-0">
                   {referralCount >= 10 ? (
                     <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold">✓</span>
@@ -132,7 +133,7 @@ export default function ReferralDashboard({ referralCode, email }: Props) {
               </div>
               
               <div className={`flex items-center gap-4 p-5 rounded-xl ${referralCount >= 25 ? 'bg-green-100 border-2 border-green-300' : 'bg-white border-2 border-slate-300'}`}>
-                <div className="shrink-0">
+                <div className="flex-shrink-0">
                   {referralCount >= 25 ? (
                     <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold">✓</span>
