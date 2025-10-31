@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import './globals.css'
+import './api/waitlist/route'
 
 export const metadata: Metadata = {
   title: 'AsValue - Professional WhatsApp Business Platform',
