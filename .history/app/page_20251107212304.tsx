@@ -66,7 +66,7 @@ function Navbar() {
           {/* Logo */}
           <div className="shrink-0">
             <a href="#" className="flex items-center group">
-              <span className="text-2xl md:text-3xl font-bold bg-linear-to-br from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300">
+              <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300">
                 ASVALUE
               </span>
             </a>

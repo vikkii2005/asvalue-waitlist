@@ -31,118 +31,17 @@ import {
   Share2,
   Loader2,
   User,
-  Menu,
-  X,
+  Linkedin,
+  MapPin,
+  Phone,
+  ExternalLink,
 } from 'lucide-react'
-
-/* ============================== NAVBAR ============================== */
-
-function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const navLinks = [
-    { name: 'Solutions', href: '#problems' },
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#waitlist' },
-  ]
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-      }`}
-    >
-      <nav className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <div className="shrink-0">
-            <a href="#" className="flex items-center group">
-              <span className="text-2xl md:text-3xl font-bold bg-linear-to-br from-blue-600 via-blue-700 to-blue-800 bg-clip-text text-transparent hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300">
-                ASVALUE
-              </span>
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-slate-700 hover:text-blue-600 font-medium text-base transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:flex items-center">
-            <button
-              onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-base transition-all shadow-sm hover:shadow-md"
-            >
-              Join Waitlist
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-700 hover:text-blue-600 p-2"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 py-4 bg-white">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-slate-700 hover:text-blue-600 font-medium text-base transition-colors duration-200 px-2"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false)
-                  document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-base transition-all shadow-sm hover:shadow-md mx-2"
-              >
-                Join Waitlist
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
-  )
-}
 
 /* ============================== HERO ============================== */
 
 function Hero() {
   return (
-    <section className="w-full bg-white pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 lg:pb-24">
+    <section className="w-full bg-white pt-14 md:pt-20 lg:pt-24 pb-16 md:pb-20 lg:pb-24">
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Laptop layout: wider text (7/12) and tighter card (5/12) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-14 items-center lg:items-start">
@@ -186,7 +85,7 @@ function Hero() {
           {/* Right: 5/12 (aligned to right on laptop for better balance) */}
           <div className="lg:col-span-5 lg:justify-self-end w-full">
             <div className="bg-white rounded-2xl p-6 sm:p-7 lg:p-8 shadow-md border border-slate-200 w-full">
-              <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wide mb-5">Why Choose ASVALUE</p>
+              <p className="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wide mb-5">Why Choose AsValue</p>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <div className="flex items-center justify-center w-11 h-11 bg-blue-50 rounded-lg shrink-0">
@@ -241,7 +140,7 @@ function Problems() {
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 md:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">Your Challenges, Solved</h2>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl">Every seller faces these issues. ASVALUE solves them all in one platform.</p>
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl">Every seller faces these issues. AsValue solves them all in one platform.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8">
@@ -293,7 +192,7 @@ function Features() {
   ]
 
   return (
-    <section id="features" className="w-full bg-slate-50 py-18 md:py-24 lg:py-28">
+    <section className="w-full bg-slate-50 py-18 md:py-24 lg:py-28">
       <div className="w-full max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 md:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">Everything You Get</h2>
@@ -673,10 +572,98 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-white mb-4">ASVALUE</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">AsValue</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Professional seller platform helping businesses manage all sales channels in one place. Keep 100% of your revenue.
             </p>
+            <div className="flex gap-3">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Product */}
+          <div>
+            <h4 className="text-white font-bold text-base mb-4">Product</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#features" className="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1">
+                  Features
+                </a>
+              </li>
+              <li>
+                <a href="#problems" className="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1">
+                  Solutions
+                </a>
+              </li>
+              <li>
+                <a href="#waitlist" className="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a href="#waitlist" className="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1">
+                  Integration
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-white font-bold text-base mb-4">Company</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Support */}
@@ -721,7 +708,6 @@ function Footer() {
 export default function Page() {
   return (
     <main className="w-full bg-white">
-      <Navbar />
       <Hero />
       <Problems />
       <Features />
